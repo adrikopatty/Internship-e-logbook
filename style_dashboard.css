@@ -23,3 +23,18 @@ a.Dash_buttons{
     text-decoration: none;
     transition: 0.7s;
  }
+
+
+  .w3-row-padding img {margin-bottom: 12px}
+  
+  .about_img{
+    float: left;
+    margin: 40px;
+    transition: 0.7s;
+  }
+.contact{
+    margin-top: 60px;
+}
+.about_img:hover{
+    padding: 10px;
+}
