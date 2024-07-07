@@ -70,7 +70,25 @@
                           </ul>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#"><i style="font-size:24px" class="fa">&#xf08b;</i> Logout</a>
+                            
+
+<a class="nav-link" href="#" onclick="document.getElementById('id01').style.display='block'"><i style="font-size:24px" class="fa">&#xf1f8;</i> Delete account</a>
+
+<div id="id01" class="modal">
+  <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">×</span>
+  <form class="modal-content" action="/action_page.php">
+    <div class="container">
+      <h1>Delete Account</h1>
+      <p>Are you sure you want to delete your account?</p>
+    
+      <div class="clearfix">
+        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+        <a href="Internship-e-logbook-forms/student/login.html"><button type="button" onclick="document.getElementById('id01').style.display='none'" class="deletebtn">Delete</button></a>
+      </div>
+    </div>
+  </form>
+</div>
+                            <a class="nav-link" href="Internship-e-logbook-forms/student/login.html"><i style="font-size:24px" class="fa">&#xf08b;</i> Logout</a>
                           </li>
                       </ul>
                       <form class="d-flex mt-3" role="search">
@@ -132,18 +150,43 @@
     <div class="month-list"></div>
   </div>
 
- <div class="input_div">
-    <input class="activity_box" type="text" placeholder="Enter new activity here......" >
-    <button type="reset" class="btn btn-primary" style="background-color: white;margin-right: 40px;margin-top: -25px; color: black; float: right;">Cancel</button>
-    <button type="submit" class="btn btn-primary" style="float: right;margin-right: 20px;margin-top: -25px;">Submit</button>
+ <div class="input_div" style="display: block">
+    <div class="input_box" style="width: fit-content;">
+        <textarea class="activity_box" type="text" placeholder="Enter new activity here......" ></textarea>
+        <button type="reset" class="btn btn-primary" style="background-color: white;margin-right: 40px;margin-top: -25px; color: black; float: right;">Cancel</button>
+        <button type="submit" class="btn btn-primary" style="float: right;margin-right: 20px;margin-top: -25px;">Submit</button>
+    </div>
     
+    <div class="row" style="margin-top: 70px; margin-left: 35px; width: fit-content;" >
+        <div class="col-sm-6 mb-3 mb-sm-0" >
+          <div class="card" style="width: 300px; " >
+            <div class="card-body">
+              <h5 class="card-title">Activity title</h5>
+              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+              <a href="#" class="btn btn-primary">Read more</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 ">
+          <div class="card" style="width: 300px;">
+            <div class="card-body">
+              <h5 class="card-title">Activity title</h5>
+              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+              <a href="#" class="btn btn-primary">Read more</a>
+            </div>
+          </div>
+        </div>
+        
+      </div>
 </div> 
+
 
 </div>
 
+
 <!-- Contact Section -->
 <div class="contact">
-<div class="w3-padding-32 w3-content w3-text-grey" id="contact" style="margin-bottom:64px">
+<div class="w3-padding-32 w3-content w3-text-white" id="contact" style="margin-bottom:64px; margin: 20px;">
   <h2>Contact Us</h2>
   
 
@@ -156,14 +199,14 @@
 </div>
         </main>
         <!-- Footer -->
-  <footer class="w3-container w3-padding-64 w3-light-grey w3-center w3-opacity w3-xlarge" style="margin:-24px">
+  <footer class="w3-container w3-padding-36 w3-light-grey w3-center w3-opacity w3-xlarge" style="margin:-24px">
     <i class="fa fa-facebook-official w3-hover-opacity"></i>
     <i class="fa fa-instagram w3-hover-opacity"></i>
     <i class="fa fa-snapchat w3-hover-opacity"></i>
     <i class="fa fa-pinterest-p w3-hover-opacity"></i>
     <i class="fa fa-twitter w3-hover-opacity"></i>
     <i class="fa fa-linkedin w3-hover-opacity"></i>
-    <p class="w3-medium">Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank" class="w3-hover-text-green">Mbarara University</a></p>
+    <p class="w3-medium">Powered by <a href="https://www.must.ac.ug/" target="_blank" class="w3-hover-text-green">Mbarara University</a></p>
   <!-- End footer -->
   </footer>
         <!-- Bootstrap JavaScript Libraries -->
@@ -181,5 +224,16 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <script src="index.js"></script>
+  <script>
+    // Get the modal
+    var modal = document.getElementById('id01');
+    
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+    </script>
     </body>
 </html>
