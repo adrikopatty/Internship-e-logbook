@@ -26,7 +26,7 @@
 </head>
 
   <body>
-    <form class="form-signin">
+    <form class="form-signin" action="connect.php" method="post">
         <div class="text-center mb-4">
             <img class="mb-4" src="../assets/brand/logo.svg" alt="" width="40" height="40">
             <h1 class="h4 mb-3 font-weight-normal">Internship E-logbook</h1>
@@ -37,48 +37,48 @@
         <div class="form-label-group">
             <label for="inputName">Name</label>
             <input type="text" id="inputName" class="form-control" placeholder="Name" required=""
-                autofocus="">
+                autofocus="" name="name">
             
         </div>
 
         <div class="form-label-group">
             <label for="inputEmail">Email address</label>
             <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required=""
-                autofocus="">
+                autofocus="" name="student_email">
             
         </div>
-        <div class="form-label-group">
+        <!-- <div class="form-label-group">
             <label for="inputinstitution">Choose Institution</label>
             <input type="number" id="inputinstitution" class="form-control" placeholder="Choose Institution to which you belong" required=""
-                autofocus="">
+                autofocus="" name="institution_id">
             
-        </div>
+        </div> -->
 
         <div class="form-label-group">
             <label for="Gender">Gender</label>
-            <input type="text" id="Gender" class="form-control" placeholder="Gender" required="">
+            <input type="text" id="Gender" class="form-control" placeholder="Gender" required="" name="Gender">
           </div>
 
           <div class="form-label-group">
             <label for="Contact">Contact</label>
-            <input type="number" id="Contact" class="form-control" placeholder="Contact" required="">
+            <input type="number" id="Contact" class="form-control" placeholder="Contact" required="" name="Contact">
           </div>
 
           <div class="form-label-group">
             <label for="Student_level">Student Level</label>
-            <input type="text" id="Student_level" class="form-control" placeholder="Student Level" required="">
+            <input type="text" id="Student_level" class="form-control" placeholder="Student Level" required="" name="Student_level">
           </div>
 
           
         <div class="form-label-group">
             <label for="inputPassword">Password</label>
-            <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="">
+            <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="" name="password">
             
         </div>
 
         <div class="form-label-group">
             <label for="confirmInputPassword">Confirm Password</label>
-            <input type="password" id="confirmInputPassword" class="form-control" placeholder="Confirm Password" required="">
+            <input type="password" id="confirmInputPassword" class="form-control" placeholder="Confirm Password" required="" name="confirm_password">
            
             
         </div>
