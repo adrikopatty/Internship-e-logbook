@@ -21,7 +21,7 @@ if(isset($_POST['submit'])) {
         if(password_verify($password, $hashedPassword)) {
             $_SESSION['user_id'] = $results[0]->user_id;
             //  echo "<script>alert('Login successful');</script>";
-            echo "<script>window.location.href='admin_dashboard.html';</script>";
+            echo "<script>window.location.href='admin_dashboard.php';</script>";
         } else {
             echo "<script>alert('Invalid email or pass');</script>";
         }

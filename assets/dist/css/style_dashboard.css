@@ -1,64 +1,70 @@
-.hero{
-    width: 100%;
-    height: 700px;
-    object-fit: fill;
+.hero {
+  width: 100%;
+  height: 700px;
+  object-fit: fill;
 }
- /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
- .row.content {height: 550px}
-    
- /* Set gray background color and 100% height */
- .sidenav {
-   background-color: #f1f1f1;
-   height: 100%;
- }
- .nav-link:hover{
+/* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+.row.content {
+  height: 550px;
+}
+
+/* Set gray background color and 100% height */
+.sidenav {
+  background-color: #f1f1f1;
+  height: 100%;
+}
+.nav-link:hover {
   transform: scale(0.9);
-  transition: all .2s ease-in-out left;
- }
-     
- /* On small screens, set height to 'auto' for the grid */
- @media screen and (max-width: auto) {
-   .row.content {height: auto;} 
- }
- main{
-    margin-top: 40px;
-    margin: 20px;
- }
-a.Dash_buttons{
-    text-decoration: none;
-    transition: 0.7s;
- }
-
-
-  .w3-row-padding img {margin-bottom: 12px}
-  
-  .about_img{
-    float: left;
-    margin: 40px;
-    transition: 0.7s;
-  }
-.contact{
-    margin-top: 60px;
+  transition: all 0.2s ease-in-out left;
 }
-.about_img:hover{
-    padding: 10px;
+
+/* On small screens, set height to 'auto' for the grid */
+@media screen and (max-width: auto) {
+  .row.content {
+    height: auto;
+  }
+}
+main {
+  margin-top: 40px;
+  margin: 20px;
+}
+a.Dash_buttons {
+  text-decoration: none;
+  transition: 0.7s;
+}
+
+.w3-row-padding img {
+  margin-bottom: 12px;
+}
+
+.about_img {
+  float: left;
+  margin: 40px;
+  transition: 0.7s;
+}
+.contact {
+  margin-top: 60px;
+}
+.about_img:hover {
+  padding: 10px;
 }
 
 /* Background styles */
 body {
   background-color: #011542;
-  background-image: 
-      radial-gradient(at 47% 33%, hsl(166.67, 37%, 9%) 0, transparent 59%), 
-      radial-gradient(at 82% 65%, hsl(120.00, 80%, 15%) 0, transparent 55%);
+  background-image: radial-gradient(
+      at 47% 33%,
+      hsl(166.67, 37%, 9%) 0,
+      transparent 59%
+    ),
+    radial-gradient(at 82% 65%, hsl(120, 80%, 15%) 0, transparent 55%);
 }
-.w3-container{
+.w3-container {
   border-radius: 20px 20px;
-  
 }
-.w3-container:hover{
+.w3-container:hover {
   transform: scale(1.05);
   transition: all 0.2s ease-in-out;
-  
 }
 
 /* calender */
@@ -69,16 +75,7 @@ body {
   box-sizing: border-box;
 }
 
-/* body {
-  display: flex;
-  height: 100vh;
-  width: 100%;
-  justify-content: center;
-  align-items: center;
-  place-items: center;
-  background: linear-gradient(to right, #9796f0, #42445A);
-  overflow: hidden;
-} */
+
 
 .calendar {
   /* height: 32rem; */
@@ -90,14 +87,13 @@ body {
   margin-left: 15px;
   margin-top: 45px;
   /* blur background */
-  backdrop-filter: blur(16px) saturate(180%);
-    -webkit-backdrop-filter: blur(16px) saturate(180%);
-    background-color: rgba(17, 25, 40, 0.28);
-    border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.125);
+  /* backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background-color: rgba(17, 25, 40, 0.28); */
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.125);
   height: max-content;
 }
-
 
 .calendar {
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
@@ -129,13 +125,13 @@ body {
 .calendar-week-days div:hover {
   color: black;
   transform: scale(1.2);
-  transition: all .2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 .calendar-week-days div {
   display: grid;
   place-items: center;
-  color: #cf67a5;
+  color: #6d67cf;
   height: 50px;
 }
 
@@ -143,7 +139,7 @@ body {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   gap: 2px;
-  color: #ffffff;
+  color: #0a0921;
 }
 
 .calendar-days div {
@@ -180,8 +176,8 @@ body {
 }
 
 .year-change:hover {
-  background-color: #96d0f0;
-  transition: all .2s ease-in-out;
+  background-color: #9796f0;
+  transition: all 0.2s ease-in-out;
   transform: scale(1.12);
 }
 
@@ -206,12 +202,12 @@ body {
   transition: width 0.2s ease-in-out, height 0.2s ease-in-out;
   background-color: #fbc7d4;
   border-radius: 20%;
-  color: #000000;
+  color: #f8fbff;
 }
 
 .calendar-days div.current-date {
   color: #f8fbff;
-  background-color: #96f0a2;
+  background-color: #9796f0;
   border-radius: 20%;
 }
 
@@ -227,20 +223,20 @@ body {
   border-radius: 20px;
 }
 
-.month-list>div {
+.month-list > div {
   display: grid;
   place-content: center;
   margin: 5px 10px;
   transition: all 0.2s ease-in-out;
 }
 
-.month-list>div>div {
+.month-list > div > div {
   border-radius: 15px;
   padding: 10px;
   cursor: pointer;
 }
 
-.month-list>div>div:hover {
+.month-list > div > div:hover {
   background-color: #9796f0;
   color: #f8fbff;
   transform: scale(0.9);
@@ -251,7 +247,7 @@ body {
   visibility: visible;
   pointer-events: visible;
   transition: 0.6s ease-in-out;
-  animation: to-left .71s forwards;
+  animation: to-left 0.71s forwards;
 }
 
 .month-list.hideonce {
@@ -273,14 +269,14 @@ body {
   top: 100px;
   justify-content: center;
   align-items: center;
-  color: white;
+  
 }
 
 .day-text-formate {
   font-family: Microsoft JhengHei UI;
   font-size: 1.4rem;
   padding-right: 5%;
-  border-right: 3px solid #f0b296;
+  border-right: 3px solid #9796f0;
 }
 
 .date-time-value {
@@ -378,9 +374,9 @@ body {
   }
 }
 
-.activity_box{
-  width: 1050px;
-  height: 300px;
+.activity_box {
+  width: 100%;
+  height: 200px;
   margin: 40px;
   margin-top: 50px;
   border-radius: 10px 10px;
@@ -391,10 +387,11 @@ body {
   padding: 20px;
 }
 
+
 /* delete account */
 /* Set a style for all buttons */
 a.delete_account_button {
-  background-color: #04AA6D;
+  background-color: #04aa6d;
   color: white;
   padding: 14px 20px;
   margin: 8px 0;
@@ -405,11 +402,12 @@ a.delete_account_button {
 }
 
 a.delete_account_button:hover {
-  opacity:1;
+  opacity: 1;
 }
 
 /* Float cancel and delete buttons and add an equal width */
-.cancelbtn, .deletebtn {
+.cancelbtn,
+.deletebtn {
   float: center;
   width: 10%;
 }
@@ -448,10 +446,10 @@ a.delete_account_button:hover {
   overflow: auto; /* Enable scroll if needed */
   /* blur background */
   backdrop-filter: blur(16px) saturate(180%);
-    -webkit-backdrop-filter: blur(16px) saturate(180%);
-    background-color: rgba(17, 25, 40, 0.28);
-    border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.125);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background-color: rgba(17, 25, 40, 0.28);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.125);
   padding-top: 50px;
 }
 
@@ -468,7 +466,7 @@ hr {
   border: 1px solid #f1f1f1;
   margin-bottom: 25px;
 }
- 
+
 /* The Modal Close Button (x) */
 .close {
   position: absolute;
@@ -494,7 +492,29 @@ hr {
 
 /* Change styles for cancel button and delete button on extra small screens */
 @media screen and (max-width: 300px) {
-  .cancelbtn, .deletebtn {
-     width: 100%;
+  .cancelbtn,
+  .deletebtn {
+    width: 100%;
   }
+}
+@media screen and (max-width: 150px) {
+  .cancelbtn,
+  .deletebtn {
+    width: 50%;
+  }
+}
+
+.test-body{
+  display:flex ;
+  flex-direction: column;
+}
+.fa:hover{
+  cursor: pointer;
+}
+.table-responsive{
+  margin-top: 60px;
+}
+.titals{
+  text-align: center;
+  color: white;
 }

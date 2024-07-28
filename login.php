@@ -51,7 +51,7 @@ if(isset($_POST['submit'])) {
             <img class="mb-4" src="assets/brand/logo.svg" alt="" width="40" height="40">
             <h1 class="h4 mb-3 font-weight-normal">Internship E-logbook</h1>
             <hr>
-            <p>User login</p>
+            <p>Student login</p>
         </div>
         <label for="inputEmail" class="sr-only">Email address</label>
         <input type="email" id="inputEmail" name="email" class="form-control" placeholder="Email address" required autofocus>

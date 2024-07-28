@@ -21,7 +21,7 @@ if(isset($_POST['submit'])) {
         if(password_verify($password, $hashedPassword)) {
             $_SESSION['user_id'] = $results[0]->user_id;
             //  echo "<script>alert('Login successful');</script>";
-            echo "<script>window.location.href='supervisor_dashboard.html';</script>";
+            echo "<script>window.location.href='supervisor_dashboard.php';</script>";
         } else {
             echo "<script>alert('Invalid email or pass');</script>";
         }
@@ -65,7 +65,7 @@ if(isset($_POST['submit'])) {
         </div>
         <button class="btn btn-lg btn-primary btn-block" type="submit" name="submit">Sign in</button>
         <a href="" >Forgot password?</a>
-        <p class="mt-3 mb-3 text-muted">No account? <a href="signup.php">Create Account</a></p>
+        <p class="mt-3 mb-3 text-muted">No account? <a href="../supervisorsignup.php">Create Account</a></p>
     </form>
 </body>
 </html>

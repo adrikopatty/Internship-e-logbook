@@ -1,14 +1,21 @@
+<?php
+session_start();
+error_reporting(0);
+include('../includes/config.php');
+
+?>
 <!doctype html>
 <html lang="en">
     <head>
-        <title>Internship e-logbook</title>
+        <title>Internship e-logbook admin dashboard</title>
         <!-- Required meta tags -->
         <meta charset="utf-8" />
         <meta
             name="viewport"
             content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
-        
+         <!---Favicons-->
+    <link rel="shortcut icon" href="Internship-e-logbook-forms/assets/brand/logo.svg" type="image/x-icon">
         <!-- Bootstrap CSS v5.2.1 -->
        
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
@@ -43,7 +50,7 @@
                           <img src="../images/avatar2.png" class="w3-circle w3-margin-right" style="width:56px" height="56px">
                         </div>
                         <div class="w3-col s8 w3-bar">
-                          <span>Welcome, <strong>User</strong></span><br>
+                          <span>Welcome, <strong>Ismail</strong></span><br>
                           <a href="#" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i></a>
                           <a href="#" class="w3-bar-item w3-button"><i class="fa fa-user"></i></a>
                           <a href="#" class="w3-bar-item w3-button"><i class="fa fa-cog"></i></a>
@@ -53,7 +60,7 @@
                     <div class="offcanvas-body">
                       <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                         <li class="nav-item">
-                          <a class="nav-link active" aria-current="page" href="#"><i style="font-size:24px" class="fa">&#xf015;</i> Home</a>
+                          <a class="nav-link active" aria-current="page" href="./admin_dashboard"><i style="font-size:24px" class="fa">&#xf015;</i> Dashboard</a>
                         </li>
                         <li class="nav-item">
                           <a class="nav-link" href="#"><i style="font-size:24px" class="fa">&#xf06a;</i> About</a>
@@ -69,7 +76,7 @@
                           </ul>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#"><i style="font-size:24px" class="fa">&#xf08b;</i> Logout</a>
+                            <a class="nav-link" href="login.php"><i style="font-size:24px" class="fa">&#xf08b;</i> Logout</a>
                           </li>
                       </ul>
                       <form class="d-flex mt-3" role="search">
@@ -85,16 +92,25 @@
         <main>
         
                 <!-- Header -->
-  <header class="w3-container" style="padding-top:22px">
+  <header class="w3-container." style="padding-top:22px; color:white;">
     <h5><b><i class="fa fa-dashboard"></i> My Dashboard</b></h5>
   </header>
 
   <div class="w3-row-padding w3-margin-bottom">
     <div class="w3-quarter">
-        <a href="#" class="Dash_buttons"><div class="w3-container w3-red w3-padding-16">
+        <a href="activities.html" class="Dash_buttons"><div class="w3-container w3-red w3-padding-16">
         <div class="w3-left"><i class="fa fa-reorder" style="font-size:48px;color:rgb(255, 255, 255)"></i></div>
         <div class="w3-right">
-          <h3>52</h3>
+          <h3>  <?php
+            $sql = "SELECT activity_id FROM activity";
+            $query = $dbh->prepare($sql);
+            if ($query->execute()) {
+                $bg = $query->rowCount();
+                echo $bg;
+            } else {
+                echo "Error: " . $query->errorInfo()[2];
+            }
+            ?></h3>
         </div>
         <div class="w3-clear"></div>
         <h4>Activities</h4>
@@ -104,7 +120,17 @@
         <a href="#" class="Dash_buttons"><div class="w3-container w3-blue w3-padding-16">
         <div class="w3-left"><i class="fa fa-male" style="font-size:48px;color:rgb(255, 255, 255)"></i></i></div>
         <div class="w3-right">
-          <h3>99</h3>
+          <h3><?php
+            $sql = "SELECT supervisor_id FROM supervisor";
+            $query = $dbh->prepare($sql);
+            if ($query->execute()) {
+                $bg = $query->rowCount();
+                echo $bg;
+            } else {
+                echo "Error: " . $query->errorInfo()[2];
+            }
+            ?>
+          </h3>
         </div>
         <div class="w3-clear"></div>
         <h4>Supervisors</h4>
@@ -114,7 +140,17 @@
         <a href="#" class="Dash_buttons"><div class="w3-container w3-teal w3-padding-16">
         <div class="w3-left"><i class="fa fa-mortar-board" style="font-size:48px;color:rgb(255, 255, 255)"></i></div>
         <div class="w3-right">
-          <h3>23</h3>
+          <h3>
+            <?php
+            $sql = "SELECT institution_id FROM institution";
+            $query = $dbh->prepare($sql);
+            if ($query->execute()) {
+                $bg = $query->rowCount();
+                echo $bg;
+            } else {
+                echo "Error: " . $query->errorInfo()[2];
+            }
+            ?></h3>
         </div>
         <div class="w3-clear"></div>
         <h4>Institutions</h4>
@@ -124,159 +160,97 @@
         <a href="#" class="Dash_buttons"><div class="w3-container w3-orange w3-text-white w3-padding-16">
         <div class="w3-left"><i class="fa fa-users w3-xxxlarge"></i></div>
         <div class="w3-right">
-          <h3>50</h3>
+          <h3><?php
+            $sql = "SELECT student_id FROM student";
+            $query = $dbh->prepare($sql);
+            if ($query->execute()) {
+                $bg = $query->rowCount();
+                echo $bg;
+            } else {
+                echo "Error: " . $query->errorInfo()[2];
+            }
+            ?></h3>
         </div>
         <div class="w3-clear"></div>
         <h4>Students</h4>
       </div></a>
     </div>
   </div>
-  <!-- image -->
-  <!-- <div class="bgimg"><img class="about_img" src="images/program images.jpg" alt="" height="620px"></div> -->
-  <!-- about -->
-  <!-- <div class="w3-content w3-justify w3-text-grey w3-padding-32" id="about">
-    
-    <div class="about"><h2>About</h2>
-     -->
-    <!-- <p>Welcome to my Internship E-Logbook!
-<br>
-      This logbook serves as a comprehensive record of my journey as an intern at [Company/Organization Name]. Throughout the duration of this internship, I will document my experiences, tasks, achievements, and reflections. This e-logbook is designed to:
-      <br>
-      Track Progress: Monitor my daily and weekly progress, providing a clear overview of the tasks completed and skills acquired.
-      Reflect on Learning: Reflect on the lessons learned, challenges faced, and the strategies used to overcome them.
-      Showcase Skills: Highlight the development of new skills and the application of existing ones in real-world scenarios.
-      Provide Feedback: Include feedback from mentors and supervisors to guide my professional growth and development.
-      Internship Details
-      Internship Title: [Your Internship Title]
-      Company/Organization: [Company/Organization Name]
-      Department: [Department or Division]
-      Supervisor/Mentor: [Supervisor/Mentor Name]
-      Duration: [Start Date] to [End Date]
-      Objectives
-      The main objectives of this internship are to:
-      
-      Gain practical experience in [Your Field/Industry].
-      Develop a deeper understanding of [Specific Areas or Skills].
-      Contribute to ongoing projects and initiatives within the company.
-      Build professional relationships and expand my network.
-      Structure of the E-Logbook
-      The e-logbook is divided into the following sections:
-      
-      Daily Entries: A record of daily tasks, activities, and observations.
-      Weekly Summaries: A recap of the week’s accomplishments, challenges, and learning experiences.
-      Project Reports: Detailed reports on specific projects or assignments completed during the internship.
-      Reflections: Personal reflections on the internship experience, including insights and growth areas.
-      Feedback: Comments and evaluations from supervisors and mentors.
-      Conclusion
-      I am excited to embark on this internship journey and look forward to documenting my experiences and growth through this e-logbook. Thank you for taking the time to review my progress and reflections.
-      
-      
-    </p> -->
-    <!-- <pre class="text_in_the_about">
-      Welcome to my Internship E-Logbook!
-
-This logbook serves as a comprehensive record of my journey as an intern <br>at [Company/Organization Name]. Throughout the duration of this internship, <br>I will document my experiences, tasks, achievements, and reflections. <br>This e-logbook is designed to:
-
-Track Progress: Monitor my daily and weekly progress, providing a clear <br>overview of the tasks completed and skills acquired.
-Reflect on Learning: Reflect on the lessons learned, challenges faced, and <br>the strategies used to overcome them.
-Showcase Skills: Highlight the development of new skills and the application <br>of existing ones in real-world scenarios.
-Provide Feedback: Include feedback from mentors and supervisors to guide <br>my professional growth and development.
-
-<u>Internship Details</u>
-Internship Title: [Your Internship Title]
-Company/Organization: [Company/Organization Name]
-Department: [Department or Division]
-Supervisor/Mentor: [Supervisor/Mentor Name]
-Duration: [Start Date] to [End Date]
-Objectives
-The main objectives of this internship are to:
-
-Gain practical experience in [Your Field/Industry].
-Develop a deeper understanding of [Specific Areas or Skills].
-Contribute to ongoing projects and initiatives within the company.
-Build professional relationships and expand my network.
-Structure of the E-Logbook
-The e-logbook is divided into the following sections:
-
-Daily Entries: A record of daily tasks, activities, and observations.
-Weekly Summaries: A recap of the week’s accomplishments, challenges, and <br>learning experiences.
-Project Reports: Detailed reports on specific projects or assignments <br>completed during the internship.
-Reflections: Personal reflections on the internship experience, including <br>insights and growth areas.
-Feedback: Comments and evaluations from supervisors and mentors.
-Conclusion
-I am excited to embark on this internship journey and look forward to <br>documenting my experiences and growth through this e-logbook. Thank you for <br>taking the time to review my progress and reflections.
-
-
-    </pre>
-  </div> -->
+ 
 
 <!-- calender -->
-
-<div class="contianer">
-  <div class="calendar">
-    <div class="calendar-header">
-      <span class="month-picker" id="month-picker"> May </span>
-      <div class="year-picker" id="year-picker">
-        <span class="year-change" id="pre-year">
-          <pre><</pre>
-        </span>
-        <span id="year">2020 </span>
-        <span class="year-change" id="next-year">
-          <pre>></pre>
-        </span>
+<div class="test-body">
+  <div class="contianer" style="display: flex;flex-direction: row;">
+    <div class="calendar">
+      <div class="calendar-header">
+        <span class="month-picker" id="month-picker"> May </span>
+        <div class="year-picker" id="year-picker">
+          <span class="year-change" id="pre-year">
+            <pre><</pre>
+          </span>
+          <span id="year">2020 </span>
+          <span class="year-change" id="next-year">
+            <pre>></pre>
+          </span>
+        </div>
       </div>
-    </div>
-
-    <div class="calendar-body">
-      <div class="calendar-week-days">
-        <div>Sun</div>
-        <div>Mon</div>
-        <div>Tue</div>
-        <div>Wed</div>
-        <div>Thu</div>
-        <div>Fri</div>
-        <div>Sat</div>
-      </div>
-      <div class="calendar-days">
-      </div>
-    </div>
-    <div class="calendar-footer">
-    </div>
-    <div class="activities"></div>
-    <div class="date-time-formate">
-      <div class="day-text-formate">TODAY</div>
-      <div class="date-time-value">
-        <div class="time-formate">01:41:20</div>
-        <div class="date-formate">03 - march - 2022</div>
-      </div>
-    </div>
-    <div class="month-list"></div>
-  </div>
-</div>
-
-<!-- Contact Section -->
-<div class="contact">
-<div class="w3-padding-32 w3-content w3-text-grey" id="contact" style="margin-bottom:64px">
-  <h2>Contact Us</h2>
   
+      <div class="calendar-body">
+        <div class="calendar-week-days">
+          <div>Sun</div>
+          <div>Mon</div>
+          <div>Tue</div>
+          <div>Wed</div>
+          <div>Thu</div>
+          <div>Fri</div>
+          <div>Sat</div>
+        </div>
+        <div class="calendar-days">
+        </div>
+      </div>
+      <div class="calendar-footer">
+      </div>
+      <div class="activities"></div>
+      <div class="date-time-formate">
+        <div class="day-text-formate">TODAY</div>
+        <div class="date-time-value">
+          <div class="time-formate">01:41:20</div>
+          <div class="date-formate">03 - march - 2022</div>
+        </div>
+      </div>
+      <div class="month-list"></div>
+    </div>
+   
+  </div>
 
-  <div class="w3-section">
-    <p><i class="fa fa-map-marker fa-fw w3-xxlarge w3-margin-right"></i> Uganda, Mbarara</p>
-    <p><i class="fa fa-phone fa-fw w3-xxlarge w3-margin-right"></i> Phone: +256 740 112 642</p>
-    <p><i class="fa fa-envelope fa-fw w3-xxlarge w3-margin-right"> </i> Email: athmanismail4@gmail.com</p>
+  <!-- Contact Section -->
+<div class="contact">
+  <div class="w3-padding-32 w3-content w3-text-white" id="contact" style="margin-bottom:64px; margin: 20px;">
+    <h2>Contact Us</h2>
+    
+  
+    <div class="w3-section">
+      <p><i class="fa fa-map-marker fa-fw w3-xxlarge w3-margin-right"></i> Uganda, Mbarara</p>
+      <p><i class="fa fa-phone fa-fw w3-xxlarge w3-margin-right"></i> Phone: +256 740 112 642</p>
+      <p><i class="fa fa-envelope fa-fw w3-xxlarge w3-margin-right"> </i> Email: athmanismail4@gmail.com</p>
+    </div>
+  </div>
   </div>
 </div>
+
 </div>
+
+
         </main>
         <!-- Footer -->
-  <footer class="w3-container w3-padding-64 w3-light-grey w3-center w3-opacity w3-xlarge" style="margin:-24px">
+  <footer class="w3-container w3-padding-36 w3-light-grey w3-center w3-opacity w3-xlarge" style="margin:-24px">
     <i class="fa fa-facebook-official w3-hover-opacity"></i>
     <i class="fa fa-instagram w3-hover-opacity"></i>
     <i class="fa fa-snapchat w3-hover-opacity"></i>
     <i class="fa fa-pinterest-p w3-hover-opacity"></i>
     <i class="fa fa-twitter w3-hover-opacity"></i>
     <i class="fa fa-linkedin w3-hover-opacity"></i>
-    <p class="w3-medium">Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank" class="w3-hover-text-green">Mbarara University</a></p>
+    <p class="w3-medium">Powered by <a href="https://www.must.ac.ug/" target="_blank" class="w3-hover-text-green">Mbarara University</a></p>
   <!-- End footer -->
   </footer>
         <!-- Bootstrap JavaScript Libraries -->
