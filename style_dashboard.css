@@ -87,9 +87,9 @@ body {
   margin-left: 15px;
   margin-top: 45px;
   /* blur background */
-  backdrop-filter: blur(16px) saturate(180%);
+  /* backdrop-filter: blur(16px) saturate(180%);
   -webkit-backdrop-filter: blur(16px) saturate(180%);
-  background-color: rgba(17, 25, 40, 0.28);
+  background-color: rgba(17, 25, 40, 0.28); */
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.125);
   height: max-content;
@@ -131,7 +131,7 @@ body {
 .calendar-week-days div {
   display: grid;
   place-items: center;
-  color: #cf67a5;
+  color: #6d67cf;
   height: 50px;
 }
 
@@ -139,7 +139,7 @@ body {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   gap: 2px;
-  color: #ffffff;
+  color: #0a0921;
 }
 
 .calendar-days div {
@@ -176,7 +176,7 @@ body {
 }
 
 .year-change:hover {
-  background-color: #96d0f0;
+  background-color: #9796f0;
   transition: all 0.2s ease-in-out;
   transform: scale(1.12);
 }
@@ -202,12 +202,12 @@ body {
   transition: width 0.2s ease-in-out, height 0.2s ease-in-out;
   background-color: #fbc7d4;
   border-radius: 20%;
-  color: #000000;
+  color: #f8fbff;
 }
 
 .calendar-days div.current-date {
   color: #f8fbff;
-  background-color: #96f0a2;
+  background-color: #9796f0;
   border-radius: 20%;
 }
 
@@ -269,14 +269,14 @@ body {
   top: 100px;
   justify-content: center;
   align-items: center;
-  color: white;
+  
 }
 
 .day-text-formate {
   font-family: Microsoft JhengHei UI;
   font-size: 1.4rem;
   padding-right: 5%;
-  border-right: 3px solid #f0b296;
+  border-right: 3px solid #9796f0;
 }
 
 .date-time-value {
@@ -510,4 +510,11 @@ hr {
 }
 .fa:hover{
   cursor: pointer;
+}
+.table-responsive{
+  margin-top: 60px;
+}
+.titals{
+  text-align: center;
+  color: white;
 }
